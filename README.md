@@ -8,8 +8,8 @@ img: 'https://cloud-c98vjphwp.vercel.app/2020-09-24_qz6y21hudmj4cexpmckf204uadvu
 ### Hello, world!
 
 # What the result will look like:
-[![homepage](https://deltacloud.vercel.app/assets/dta25.png)]
-[![homepage](https://deltacloud.vercel.app/assets/dta24.png)]
+![homepage](https://deltacloud.vercel.app/assets/dta25.png)
+![homepage](https://deltacloud.vercel.app/assets/dta24.png)
 
 ## Hmm... Telegram.. Python?
 
