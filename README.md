@@ -15,7 +15,7 @@ This is the end product of a small project that this workshop houses:
 ![Image](https://deltacloud.vercel.app/assets/Picture23.png)
 
 
-Here's a sample of what I personally use this for. My store manager, called DBFA uses a Telegram BOT to inform the store owner about operations, schedules, payments and much more. It also enabled two-factor-authentication (2FA) via Telegram.
+Here's a sample of what I personally use this for. My store manager, called DBFA uses a Telegram BOT to inform the store owner about operations, schedules, payments and much more. It also enables two-factor-authentication (2FA) via Telegram.
 ![homepage](https://deltacloud.vercel.app/assets/dta30-master.jpg.png)
 
 
