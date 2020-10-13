@@ -273,3 +273,43 @@ That was all for this workshop. This is the first ever workshop that I’ve made
 I really hope this workshop was fun. If you have any doubts, contact me on HackClub’s Slack: @deltaonealpha (https://hackclub.slack.com/team/U01AVFQUCAD)
 
 *_(P.S For those who’d like to stick around longer, there are a few external resources linked below as a bonus, which allow you to make this part of something even bigger! Hack on!)_*
+
+# Bonus Resources
+
+## TIME TO CALL HIM 
+
+![https://github.com/deltaonealpha/PyTelegramWorkshop/blob/main/assets/Picture24.png?raw=true]()
+
+While our code works marvellously, we still have a major problem to fix before we move on to making this a part of something big.
+
+### Issuing Read Receipts to Telegram
+
+If you don’t clear messages received from *getUpdates*, they’ll keep coming alongside newer messages when you make subsequent calls. To avoid this, we just have to let Telegram know that we’ve received the message(s).
+
+We pass the *updateId* with of the latest received message while using *getUpdates*, and Telegram send us only subsequent messages.
+
+The *updateID* can be found in the .JSON returned and can be used after slicing.
+
+Resources:
+
+- https://www.serverless.com/examples/aws-node-telegram-echo-bot
+
+- https://www.andreafortuna.org/2017/11/29/how-to-build-a-simple-echo-bot-on-telegram-using-hook-io-and-python/
+
+- https://www.codementor.io/@garethdwyer/building-a-telegram-bot-using-python-part-1-goi5fncay
+
+- https://blog.usejournal.com/part-1-how-to-create-a-telegram-bot-in-python-under-10-minutes-145e7f4e6e40
+
+ 
+
+Leveraging BOT API v2: Inline buttons and keyboard!
+
+Resources:
+
+- https://python-telegram-bot.readthedocs.io/en/stable/telegram.inlinekeyboardmarkup.html
+
+- https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/inlinekeyboard.py
+
+- https://python-telegram-bot.readthedocs.io/en/stable/telegram.inlinekeyboardbutton.html
+
+- https://www.mindk.com/blog/how-to-develop-a-chat-bot/
