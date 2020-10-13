@@ -1,6 +1,23 @@
-# Connecting Python and Telegram
+---
+name: 'Connecting Python and Telegram'
+description: 'Connect Telegram with Python to make some awesome stuff'
+author: '@deltaonealpha'
+img: 'https://deltacloud.vercel.app/assets/dta25.png'
+---
 
+# Connecting Python and Telegram
 ### Hello, world!
+
+# What the result will look like:
+Once done, you will be able to use Telegram BOTs to communicate with you, and your services. It has unlimited opurtunities!
+![homepage](https://deltacloud.vercel.app/assets/dta25.png)
+![homepage](https://deltacloud.vercel.app/assets/dta24.png)
+
+Here's a sample of what I personally use this for. My store manager, called DBFA uses a Telegram BOT to inform the store owner about operations, schedules, payments and much more. It also enabled two-factor-authentication (2FA) via Telegram.
+![homepage](https://deltacloud.vercel.app/assets/dta26.png)
+![homepage](https://deltacloud.vercel.app/assets/dta27.png)
+![homepage](https://deltacloud.vercel.app/assets/dta28.jpg)
+
 
 ## Hmm... Telegram.. Python?
 
@@ -11,7 +28,6 @@ Well, for starters, it is one of the very few messaging companies that provide o
 In fact, the official Telegram app is rather called a client. As its open source, there are literally a gazillion Telegram clients out there.
 
 You don’t like your client? Code one yourself, it is that flexible! 
-
 
 
 ## But Python..?
@@ -82,7 +98,7 @@ For the inquisitive ones out there, there will be some references and resources 
 
 ### Creating a bot in Telegram!
 
-### ![https://deltacloud.vercel.app/assets/Picture1.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture1.png)
 
 Telegram has these ‘bots’, or simple chats which can be handled autonomously. They’re basically a way for developers and service providers to automate interactions.
 
@@ -130,7 +146,7 @@ This is requests, an alternative to Python’s built-in URLLIB. This needs to be
 
 Running this code on repl.it doesn’t require you to pip.
 
-![https://deltacloud.vercel.app/assets/Picture2.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture2.png)
 
 
 
@@ -144,19 +160,19 @@ Now we just return *_response.json_* in an effort to improve our code and unify 
 
 And…. that’s it!
 
-![https://deltacloud.vercel.app/assets/Picture8.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture8.png)
 
 
 
 What follows is just a bunch of input() statements to receive values from the user to pass-on to the function.
 
-![https://deltacloud.vercel.app/assets/Picture9.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture9.png)
 
 
 
 Then we create a text variable with out text, and simple pass it to the function!
 
-![https://deltacloud.vercel.app/assets/Picture10.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture10.png)
 
 
 
@@ -188,19 +204,19 @@ Code dissection follows.
 
 Again, we import *_requests_* and *_json_*. Since *_json_* is a part of Python’s standard library, you won’t need to install it when using this code on your local installation.
 
-![https://deltacloud.vercel.app/assets/Picture11.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture11.png)
 
 
 
 Now we take an input for the BOT token, and concatenate it with the required URL, issuing *_getUpdates_*. Then we define a variable updates, as a .JSON returned by requests.
 
-![https://deltacloud.vercel.app/assets/Picture12.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture12.png)
 
 
 
 And now? We simple slice the text out, and print.
 
-![https://deltacloud.vercel.app/assets/Picture13.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture13.png)
 
 And… that’s it!
 
@@ -216,33 +232,33 @@ Let’s start!
 
 We start by importing *_requests_* and *_json_* to handle sending and receiving messages, and then time to include delays in our code.
 
-![https://deltacloud.vercel.app/assets/Picture14.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture14.png)
 
 Now we take inputs from the user:
 
-![https://deltacloud.vercel.app/assets/Picture15.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture15.png)
 
 Now, the user is instructed to send “hello” to their Telegram bot and then enter any key to proceed. 
 
 (We have to wait for a confirmation else the code will immediately proceed to replying when the user hasn’t even sent anything :D)
 
-![https://deltacloud.vercel.app/assets/Picture16.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture16.png)
 
 Now, we simply concatenate the inputs into a URL and define a variable *_updates_* as a request to this URL:
 
-![https://deltacloud.vercel.app/assets/Picture17.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture17.png)
 
 Then we print the slice the .JSON received, print the received text and put it in an *_if…else_* block to compare it and detect whether the message is “hello” (or its case variations) or something entirely different! 
 
-![https://deltacloud.vercel.app/assets/Picture18.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture18.png)
 
 If the message is *_“hello”_*, we send a greeting back!
 
-![https://deltacloud.vercel.app/assets/Picture19.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture19.png)
 
 If the message is not “hello”, we still send a message back, but a different one: 
 
-![https://deltacloud.vercel.app/assets/Picture20.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture20.png)
 
 
 
@@ -258,11 +274,11 @@ You can try this on a repl.it if you feel too lazy to code: https://repl.it/@del
 
 #### repl.it shell
 
-![https://deltacloud.vercel.app/assets/Picture22.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture22.png)
 
 #### Telegram chat window
 
-![https://deltacloud.vercel.app/assets/Picture23.png]()
+![Image](https://deltacloud.vercel.app/assets/Picture23.png)
 
 
 
@@ -278,7 +294,7 @@ I really hope this workshop was fun. If you have any doubts, contact me on HackC
 
 ## TIME TO CALL HIM 
 
-![https://deltacloud.vercel.app/assets/Picture24.jpg]()
+![Image](https://deltacloud.vercel.app/assets/Picture24.jpg)
 
 While our code works marvellously, we still have a major problem to fix before we move on to making this a part of something big.
 
