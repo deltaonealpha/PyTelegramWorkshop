@@ -8,8 +8,15 @@ img: 'https://deltacloud.vercel.app/assets/dta25.png'
 ### Hello, world!
 
 # What the result will look like:
+Once done, you will be able to use Telegram BOTs to communicate with you, and your services. It has unlimited opurtunities!
 ![homepage](https://deltacloud.vercel.app/assets/dta25.png)
 ![homepage](https://deltacloud.vercel.app/assets/dta24.png)
+
+Here's a sample of what I personally use this for. My store manager, called DBFA uses a Telegram BOT to inform the store owner about operations, schedules, payments and much more. It also enabled two-factor-authentication (2FA) via Telegram.
+![homepage](https://deltacloud.vercel.app/assets/dta26.png)
+![homepage](https://deltacloud.vercel.app/assets/dta27.png)
+![homepage](https://deltacloud.vercel.app/assets/dta28.jpg)
+
 
 ## Hmm... Telegram.. Python?
 
