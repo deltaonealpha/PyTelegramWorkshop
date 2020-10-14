@@ -146,9 +146,9 @@ This is requests, an alternative to Python’s built-in URLLIB. This needs to be
 
 Running this code on repl.it doesn’t require you to pip.
 
-![Image](https://deltacloud.vercel.app/assets/Picture2.png)
-
-
+```
+import requests
+```
 
 Now we define a function, *_sendMsg()_*. To call this function, we will need to pass three parameters with it, your *_bot’s token_*, your *_chat ID_* and the text you need to send. As simple as that!
 
@@ -160,21 +160,32 @@ Now we just return *_response.json_* in an effort to improve our code and unify 
 
 And…. that’s it!
 
-![Image](https://deltacloud.vercel.app/assets/Picture8.png)
-
-
+```
+def sendMsg(token, chatID, text):
+  #Making the URL we need by concatinating various parts
+  send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
+  response = requests.get(send_text) #'.get' sends and returns the response (which is none here)
+  print("Sent! ") #confirmation of function call
+  return response.json() #should work just as well even without returning
+```
 
 What follows is just a bunch of input() statements to receive values from the user to pass-on to the function.
 
-![Image](https://deltacloud.vercel.app/assets/Picture9.png)
+```
+#Token ID of the bot as recieved from BotFather
+print("You'll now be asked for your BOT ID. Enter it without quotes. ")
 
-
+token = input("Enter your bot token: ")
+#Get your chat ID by sending pinging this bot: https://t.me/get_id_bot
+chatID = input("Enter your (own) Telegram chat ID: ")
+```
 
 Then we create a text variable with out text, and simple pass it to the function!
 
-![Image](https://deltacloud.vercel.app/assets/Picture10.png)
-
-
+```
+#Final function call
+sendMsg(token, chatID, text)
+```
 
 ## RECEIVING MESSAGES
 
@@ -204,19 +215,25 @@ Code dissection follows.
 
 Again, we import *_requests_* and *_json_*. Since *_json_* is a part of Python’s standard library, you won’t need to install it when using this code on your local installation.
 
-![Image](https://deltacloud.vercel.app/assets/Picture11.png)
-
-
+```
+import requests, json
+```
 
 Now we take an input for the BOT token, and concatenate it with the required URL, issuing *_getUpdates_*. Then we define a variable updates, as a .JSON returned by requests.
 
-![Image](https://deltacloud.vercel.app/assets/Picture12.png)
-
-
+```
+token = input("Enter your complete bot token: ")
+url = f'https://api.telegram.org/bot{token}/getUpdates'
+updates = requests.post(url).json()
+```
 
 And now? We simple slice the text out, and print.
 
-![Image](https://deltacloud.vercel.app/assets/Picture13.png)
+```
+print("\nText recieved:\n--------------")
+for update in updates["result"]:
+  print(update["message"]["text"])
+```
 
 And… that’s it!
 
@@ -232,35 +249,64 @@ Let’s start!
 
 We start by importing *_requests_* and *_json_* to handle sending and receiving messages, and then time to include delays in our code.
 
-![Image](https://deltacloud.vercel.app/assets/Picture14.png)
+```
+import requests, json, time
+```
 
 Now we take inputs from the user:
 
-![Image](https://deltacloud.vercel.app/assets/Picture15.png)
+```
+token = input("Enter your bot token: ")
+
+#Get your chat ID by sending pinging this bot: https://t.me/get_id_bot
+chatID = input("Enter your (own) Telegram chat ID: ")
+```
 
 Now, the user is instructed to send “hello” to their Telegram bot and then enter any key to proceed. 
 
 (We have to wait for a confirmation else the code will immediately proceed to replying when the user hasn’t even sent anything :D)
 
-![Image](https://deltacloud.vercel.app/assets/Picture16.png)
+```
+print("Now open your Telegram application and send 'hello' to your Telegram Bot.")
+time.sleep(5) #Waiting
+waitkey = input("Input any *key* once done.")
+```
 
 Now, we simply concatenate the inputs into a URL and define a variable *_updates_* as a request to this URL:
 
-![Image](https://deltacloud.vercel.app/assets/Picture17.png)
+```
+url = f'https://api.telegram.org/bot{token}/getUpdates'
+updates = requests.post(url).json()
+```
 
 Then we print the slice the .JSON received, print the received text and put it in an *_if…else_* block to compare it and detect whether the message is “hello” (or its case variations) or something entirely different! 
 
-![Image](https://deltacloud.vercel.app/assets/Picture18.png)
+```
+print("\nText recieved:\n--------------")
+for update in updates["result"]:
+  print(update["message"]["text"])
+  if update["message"]["text"] in ("hello", "HELLO", "Hello", "hELLO"):
+    print("Detected")
+```
 
 If the message is *_“hello”_*, we send a greeting back!
 
-![Image](https://deltacloud.vercel.app/assets/Picture19.png)
+```
+    text = "Hey there! Hope you enjoyed this HackClub workshop ;)"
+    send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
+    response = requests.get(send_text)
+    print("Sent! ") #confirmation
+```
 
 If the message is not “hello”, we still send a message back, but a different one: 
 
-![Image](https://deltacloud.vercel.app/assets/Picture20.png)
-
-
+```
+  else:
+    text = "Oooohh!\n\n Try pinging me with 'hello' and run the code on repl.it again ;)"
+    send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
+    response = requests.get(send_text)
+    print("Sent! ") #confirmation
+```
 
 And… that’s it!
 
