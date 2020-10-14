@@ -12,11 +12,11 @@ img: 'https://deltacloud.vercel.app/assets/dta25.png'
 Once done, you will be able to use Telegram BOTs to communicate with you, and your services. It has unlimited opurtunities!
 This is the end product of a small project that this workshop houses:
 
-![Image](https://deltacloud.vercel.app/assets/Picture23.png)
+![screenshot-of-workshop-end-project](https://deltacloud.vercel.app/assets/Picture23.png)
 
 
 Here's a sample of what I personally use this for. My store manager, called DBFA uses a Telegram BOT to inform the store owner about operations, schedules, payments and much more. It also enables two-factor-authentication (2FA) via Telegram.
-![homepage](https://deltacloud.vercel.app/assets/dta30-master.jpg.png)
+![screenshot-of-my-personal-implementation](https://deltacloud.vercel.app/assets/dta30-master.jpg.png)
 
 
 ## Hmm... Telegram.. Python?
@@ -98,7 +98,7 @@ For the inquisitive ones out there, there will be some references and resources 
 
 ### Creating a bot in Telegram!
 
-![Image](https://deltacloud.vercel.app/assets/Picture1.png)
+![bots-everywhere-gif-frame](https://deltacloud.vercel.app/assets/Picture1.png)
 
 Telegram has these ‘bots’, or simple chats which can be handled autonomously. They’re basically a way for developers and service providers to automate interactions.
 
@@ -146,7 +146,7 @@ This is requests, an alternative to Python’s built-in URLLIB. This needs to be
 
 Running this code on repl.it doesn’t require you to pip.
 
-```
+```python
 import requests
 ```
 
@@ -160,7 +160,7 @@ Now we just return *_response.json_* in an effort to improve our code and unify 
 
 And…. that’s it!
 
-```
+```python
 def sendMsg(token, chatID, text):
   #Making the URL we need by concatinating various parts
   send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
@@ -171,7 +171,7 @@ def sendMsg(token, chatID, text):
 
 What follows is just a bunch of input() statements to receive values from the user to pass-on to the function.
 
-```
+```python
 #Token ID of the bot as recieved from BotFather
 print("You'll now be asked for your BOT ID. Enter it without quotes. ")
 
@@ -182,7 +182,7 @@ chatID = input("Enter your (own) Telegram chat ID: ")
 
 Then we create a text variable with out text, and simple pass it to the function!
 
-```
+```python
 #Final function call
 sendMsg(token, chatID, text)
 ```
@@ -215,13 +215,13 @@ Code dissection follows.
 
 Again, we import *_requests_* and *_json_*. Since *_json_* is a part of Python’s standard library, you won’t need to install it when using this code on your local installation.
 
-```
+```python
 import requests, json
 ```
 
 Now we take an input for the BOT token, and concatenate it with the required URL, issuing *_getUpdates_*. Then we define a variable updates, as a .JSON returned by requests.
 
-```
+```python
 token = input("Enter your complete bot token: ")
 url = f'https://api.telegram.org/bot{token}/getUpdates'
 updates = requests.post(url).json()
@@ -229,7 +229,7 @@ updates = requests.post(url).json()
 
 And now? We simple slice the text out, and print.
 
-```
+```python
 print("\nText recieved:\n--------------")
 for update in updates["result"]:
   print(update["message"]["text"])
@@ -249,13 +249,13 @@ Let’s start!
 
 We start by importing *_requests_* and *_json_* to handle sending and receiving messages, and then time to include delays in our code.
 
-```
+```python
 import requests, json, time
 ```
 
 Now we take inputs from the user:
 
-```
+```python
 token = input("Enter your bot token: ")
 
 #Get your chat ID by sending pinging this bot: https://t.me/get_id_bot
@@ -266,7 +266,7 @@ Now, the user is instructed to send “hello” to their Telegram bot and then e
 
 (We have to wait for a confirmation else the code will immediately proceed to replying when the user hasn’t even sent anything :D)
 
-```
+```python
 print("Now open your Telegram application and send 'hello' to your Telegram Bot.")
 time.sleep(5) #Waiting
 waitkey = input("Input any *key* once done.")
@@ -274,14 +274,14 @@ waitkey = input("Input any *key* once done.")
 
 Now, we simply concatenate the inputs into a URL and define a variable *_updates_* as a request to this URL:
 
-```
+```python
 url = f'https://api.telegram.org/bot{token}/getUpdates'
 updates = requests.post(url).json()
 ```
 
 Then we print the slice the .JSON received, print the received text and put it in an *_if…else_* block to compare it and detect whether the message is “hello” (or its case variations) or something entirely different! 
 
-```
+```python
 print("\nText recieved:\n--------------")
 for update in updates["result"]:
   print(update["message"]["text"])
@@ -291,7 +291,7 @@ for update in updates["result"]:
 
 If the message is *_“hello”_*, we send a greeting back!
 
-```
+```python
     text = "Hey there! Hope you enjoyed this HackClub workshop ;)"
     send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
     response = requests.get(send_text)
@@ -300,7 +300,7 @@ If the message is *_“hello”_*, we send a greeting back!
 
 If the message is not “hello”, we still send a message back, but a different one: 
 
-```
+```python
   else:
     text = "Oooohh!\n\n Try pinging me with 'hello' and run the code on repl.it again ;)"
     send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chatID + '&parse_mode=Markdown&text=' + text
@@ -320,11 +320,11 @@ You can try this on a repl.it if you feel too lazy to code: https://repl.it/@del
 
 #### repl.it shell
 
-![Image](https://deltacloud.vercel.app/assets/Picture22.png)
+![repl.it-screenshot](https://deltacloud.vercel.app/assets/Picture22.png)
 
 #### Telegram chat window
 
-![Image](https://deltacloud.vercel.app/assets/Picture23.png)
+![telegram-screenshot](https://deltacloud.vercel.app/assets/Picture23.png)
 
 
 
@@ -340,7 +340,7 @@ I really hope this workshop was fun. If you have any doubts, contact me on HackC
 
 ## TIME TO CALL HIM 
 
-![Image](https://deltacloud.vercel.app/assets/Picture24.jpg)
+![Mahdi-electroBoom-image-the-rectifier](https://deltacloud.vercel.app/assets/Picture24.jpg)
 
 While our code works marvellously, we still have a major problem to fix before we move on to making this a part of something big.
 
